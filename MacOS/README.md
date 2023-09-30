@@ -55,6 +55,17 @@
     % mkdir projectName                     # 프로젝트를 위한 디렉토리(폴더) 생성
     % cd projectName                        # 디렉토리 안으로 이동
     % pyenv local [venvName]                # venv 가상 환경 적용
+
+#### SDKMAN
+
+    % curl -s "https://get.sdkman.io" | bash
+    % source "$HOME/.sdkman/bin/sdkman-init.sh"
+    % sdk version                                 // 설치 확인
+    % sdk list java                               // 설치할 수 있는 자바 목록 보기
+    % sdk install java 11.0.19-amzn               // 리스트로 확인한 것 중 다운받을 버전 넣기
+    % sdk use java 11.0.19-amzn                   // 사용하기
+    % sdk current java                            // 현재 사용 버전 확인
+    % echo $JAVA_HOME                             // 환경변수 자동 설정 확인
   
 #### yarn
 
