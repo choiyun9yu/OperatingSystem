@@ -416,6 +416,13 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
     [sql 명령어 모음](https://github.com/choiyun9yu/Database)
 
+#### HTTPie
+
+    % curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg
+    % sudo echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" > /etc/apt/sources.list.d/httpie.list
+    % sudo apt update
+    % sudo apt install httpie
+
 #### MongoDB
 
     # Gnupg 패키지를 설치
