@@ -76,7 +76,10 @@
 
      % brew install git
      % git config --global core.autocrlf true
-     
+
+#### HTTPie
+
+ 	% brew install HTTPie 
 
 #### MariaDB
 
