@@ -57,7 +57,7 @@
   
 
 #### 모든 컨테이너와 이미지 등 도커 요소 중지 및 삭제
-    $ docker stop ${docker ps -aq}  // 모든 컨테이너 중지
+    $ docker stop $(docker ps -aq)  // 모든 컨테이너 중지
     $ docker system prune -a        // 사용되지 않는 모든 도커 요소 삭제
   
 
