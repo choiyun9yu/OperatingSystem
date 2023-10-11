@@ -136,9 +136,11 @@
   
 # Ubuntu
 
-터미널창 열기 : ctrl + alt + T  
-현재 SHELL 확인 : echo $SHELL
-설치된 SHELL 확인 : cat /etc/shells
+터미널창 열기: ctrl + alt + T  
+
+    % cat /etc/issue     // 현재 우분투 버전 확인
+    % echo $SHELL        // 현재 SHELL 확인
+    % cat /etc/shells    // 설치된 SHELL 확인
 
 #### Upgrade
 우분투는 메이저 버전업시 OS 업그레이드를 지원한다.
@@ -341,6 +343,7 @@
     $ yarn install  # package.json 으로부터 의존성 모듈 설치
 
     # 의존성 모듈 설치
+    $ yarn add package.json
     $ yarn add [package]
     $ yarn add [package]@[version]
     $ yarn add [package]@[tag]
@@ -357,6 +360,16 @@
 Yarn에서 자동으로 yarn install 때마다 yarn.lock이 생성된다.  
 package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
+#### .NET
+[install guide](https://learn.microsoft.com/ko-kr/dotnet/core/install/linux-ubuntu-2204#install-net)
+    // .NET SDK 설치
+    % sudo apt-get update && \
+  sudo apt install -y apt-transport-https dotnet-sdk-5.0
+
+    // 설치 버전 확인
+    % dotnet --list-sdks
+    % dotnet --list-runtimes
+    
 #### git 
 
     $ sudo apt-get install git
@@ -446,7 +459,7 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     # 버전 및 주소 확인
     $ mongo --eval 'db.runCommand({ connectionStatus: 1 })'
 
-##### MongoDB compass
+#### MongoDB compass
 [Download link](https://www.mongodb.com/try/download/compass)
 
     # 다운받음 파일이 있는 경로에서
