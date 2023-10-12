@@ -316,7 +316,7 @@
     # npm 특정버전 업그레이드
     $ sudo npm install -g npm@x.x.x
 
-    # 
+    # nvm 대신 n을 사용
     $ npm install -g n 
     
     # node.js 특정버전 업그레이드
