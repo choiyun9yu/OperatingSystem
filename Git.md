@@ -69,7 +69,7 @@
     % git config --global user.name {이름}      // 전역 이름 설정 
     % git config --global user.email {깃이메일}  // 전역 이메일 설정
     
-    // 맥-윈도우 간 개행문자가 다름으로 인해 텍스트파일 깨지는거 잡아주는 거
+    // 맥-윈도우 간 개행문자가 다름으로 인해 텍스트파일 깨지는거 잡아주는 명령
     % git config --global core.autocrlf true   
 
     % git remote add {원격저장소별명} {깃주소}
