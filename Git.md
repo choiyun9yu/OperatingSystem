@@ -64,13 +64,13 @@
 ## 3. Git 시작하기 
 
 ### 3-1. 깃 초기 설정   
-**git init** : .git이 숨김파일로 만들어지는 그럼 git clone에서 문제 발생
-**git config --global user.name <이름>**
-**git config --global user.email <깃이메일>**  
-**git config --global core.autocrlf true** <맥-윈도우 간 개행문자가 다름으로 인해 텍스트파일 깨지는거 잡아주는 거
-**git remote add <원격저장소별명> <깃주소>**
-**git pull origin main** 
-**git push -u <원격저장소별명> <브랜치이름>** 
+**git init** : .git이 숨김파일로 만들어지는 그럼 git clone에서 문제 발생  
+**git config --global user.name <이름>**  
+**git config --global user.email <깃이메일>**    
+**git config --global core.autocrlf true** <맥-윈도우 간 개행문자가 다름으로 인해 텍스트파일 깨지는거 잡아주는 거  
+**git remote add <원격저장소별명> <깃주소>**  
+**git pull origin main**   
+**git push -u <원격저장소별명> <브랜치이름>**   
 
 ### 3-2. 깃 저장소 폴더로 내려받는 방법
 **git clone <깃 주소>**
@@ -79,13 +79,13 @@
 **git pull** 
   
 ### 3-4. 업로드
-**git add <파일명> or <.>**
-**git add -u**   // 수정되거나 사제된 파일 반영
-**git commit -m“메세지”**
-**git commit -a-m”메세지”**  // 수정되거나 삭제된 파일만 
-**git push**
-**git pull** 시 현재 브랜치에 추적 정보가 없습니다가 뜨는 경우
-➡️ **git branch —set-upstream-to=origin/<브랜치이름> master**
+**git add <파일명> or <.>**  
+**git add -u**   // 수정되거나 사제된 파일 반영  
+**git commit -m“메세지”**  
+**git commit -a-m”메세지”**  // 수정되거나 삭제된 파일만   
+**git push**  
+**git pull** 시 현재 브랜치에 추적 정보가 없습니다가 뜨는 경우  
+➡️ **git branch —set-upstream-to=origin/<브랜치이름> master**  
 
 ❗️git 잔디가 안심어지면 이메일 제대로 작성했는데 확인하자
 **git config —global —list**
