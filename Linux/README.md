@@ -23,8 +23,24 @@
 터미널창 열기: ctrl + alt + T  
 
     % cat /etc/issue     // 현재 우분투 버전 확인
+    
     % echo $SHELL        // 현재 SHELL 확인
     % cat /etc/shells    // 설치된 SHELL 확인
+
+    % cat /proc/cpuinfo    // cpu정보
+    % nproc                // 코어수
+    
+    % cat /proc/meminfo    // 메모리 정보
+    % free
+    
+    % df -h       // 논리 디스크 파티션
+    % fdisk -l    // 물리 디스크
+
+    // 시리얼넘버 포함한 디스크 상세정보
+    % sudo apt install hdparm
+    % hdparm      
+
+    
 
 #### Upgrade
 우분투는 메이저 버전업시 OS 업그레이드를 지원한다.
