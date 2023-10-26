@@ -50,6 +50,7 @@
     % pyenv install 3.8.13
   
     # 가상환경
+    % pyenv versions			    # 설치된 버전 목록 조회
     % pyenv install 3.9.11                  # 파이썬 3.9.11 버전 설치
     % pyenv virtualenv 3.9.11 [venvName]    # venv라는 가상 환경 생성
     % mkdir projectName                     # 프로젝트를 위한 디렉토리(폴더) 생성
