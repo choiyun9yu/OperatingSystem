@@ -34,6 +34,14 @@
 	1) 비주얼스튜디오에서  보기 > 명령팔레트 > path검색 > code 명령 설치 선택
 	2) term창이나 터미널창에서 code 파일명.확장자
 
+#### pipenv
+
+	% brew install pipenv	// 설치
+	% pipenv --python 3.X	// 가상환경 생성
+	% pipenv --rm		// 가상환경 제거
+ 	% pipenv shell		// 가상환경 실행
+  	% exit			// 종료
+
 #### pyenv
 
     % brew install pyenv
