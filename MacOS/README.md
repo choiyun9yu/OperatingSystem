@@ -34,13 +34,24 @@
 	1) 비주얼스튜디오에서  보기 > 명령팔레트 > path검색 > code 명령 설치 선택
 	2) term창이나 터미널창에서 code 파일명.확장자
 
+#### python3를 기본으로 설정하기
+
+	% vi ~/.zshrc
+ 		입력 :alias python="python3" alias pip="pip3"
+   	% source ~/.zshrc
+
 #### pipenv
 
-	% brew install pipenv	// 설치
-	% pipenv --python 3.X	// 가상환경 생성
-	% pipenv --rm		// 가상환경 제거
+ 	% pip install pipenv	// pip로 설치하기
+	% brew install pipenv	// homebrew로 설치하기
+  
+	% pipenv --python 3.X	// 프로젝트 디렉토리 안에서 가상환경 생성
  	% pipenv shell		// 가상환경 실행
-  	% exit			// 종료
+  	% exit			// 가상환경 종료
+   
+	% pipenv install 패키지명	// 가상환경에서 패키지 설치
+
+  	% pipenv --rm		// 가상환경 제거
 
 	% pipenv lock		
    	% pipenv install  
