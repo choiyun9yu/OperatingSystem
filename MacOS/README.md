@@ -89,8 +89,23 @@
     % mariadb -h호스트명 -u계정명 -p패스워드 DB명    # 접속
           (root 계정 접속 : mariadb -uroot -p)
 
-    # DB관리
+    // DB관리
     % SHOW databases;    
           CREAT database DB이름;
           DROP database DB이름;
           USE DB이름;
+
+#### MongoDB
+
+    % brew tap mongodb/brew     // MongoDB Homebrew tap 추가
+    % brew update
+
+    % brew install mongodb-community@6.0    // MongoDB 설치
+    % brew install mongodb-community-shell  // CLI 환경 사용하고 싶은 경우 설치
+
+    % brew services start mongodb-community@6.0     // MongoDB 시작하기
+    브라우저 창 (localhost:27017)
+    % brew services stop mongodb-community@6.0      // MongoDB 종료하기
+
+[Mongo Compass](https://www.mongodb.com/products/tools/compass)
+    
