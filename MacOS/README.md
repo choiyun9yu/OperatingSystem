@@ -42,6 +42,9 @@
  	% pipenv shell		// 가상환경 실행
   	% exit			// 종료
 
+	% pipenv lock		
+   	% pipenv install  
+
 #### pyenv
 
     % brew install pyenv
