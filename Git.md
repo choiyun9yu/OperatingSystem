@@ -85,7 +85,9 @@
     % echo "**/.DS_Store" >> ~/.gitignore_global
     % echo "**/._.DS_Store" >> ~/.gitignore_global
     % echo ".idea" >> ~/.gitignore_global
-    % echo "/.idea" >> ~/.gitignore_global
+    % echo "**/.idea" >> ~/.gitignore_global
+    % echo ".vscode" >> ~/.gitignore_global
+    % echo "Thumbs.db" >> ~/.gitignore_global
     % git config --global core.excludesfile ~/.gitignore_global
 
 ### 3-2. 깃 저장소 폴더로 내려받는 방법
