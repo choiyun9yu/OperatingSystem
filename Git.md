@@ -75,6 +75,16 @@
     % git config --global core.autocrlf true    // 윈도우인 경우
     % git config --global core.autocrlf input   // 리눅스인 경우
 
+    # .gitignore_global 설정
+    echo ".DS_Store" >> ~/.gitignore_global
+    echo "._.DS_Store" >> ~/.gitignore_global
+    echo "**/.DS_Store" >> ~/.gitignore_global
+    echo "**/._.DS_Store" >> ~/.gitignore_global
+    echo ".idea" >> ~/.gitignore_global
+    echo "/.idea" >> ~/.gitignore_global
+    
+    git config --global core.excludesfile ~/.gitignore_global
+
     % git remote add {원격저장소별명} {깃주소}
     % git pull origin main
     % git push -u {원격저장소별명} {브랜치이름}   
