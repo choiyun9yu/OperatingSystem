@@ -64,13 +64,16 @@
 ## 3. Git 자주 사용하는 명령어
 
 ### 3-1. 깃 초기 설정
-
     % git init                                 // 깃 시작하기
     % git config --global user.name {이름}      // 전역 이름 설정 
     % git config --global user.email {깃이메일}  // 전역 이메일 설정
     
-    // 맥-윈도우 간 개행문자가 다름으로 인해 텍스트파일 깨지는거 잡아주는 명령
-    % git config --global core.autocrlf true   
+    # git 설정으로 원격 저장소에 파일을 올릴 때 CRLF와 LF 설정 바꾸기
+        false: 개행문자를 CRLF 그대로 유지
+        true: CRLF를 LF로 자동적으로 변환. 반대로 체크아웃 받을 때는 LF를 CRLF로 변환
+        input: CRLF를 저장할때는 그대로 유지하고, 체크아웃할 때에만 줄 바꿈 문자를 LF로 변환
+    % git config --global core.autocrlf true    // 윈도우인 경우
+    % git config --global core.autocrlf input   // 리눅스인 경우
 
     % git remote add {원격저장소별명} {깃주소}
     % git pull origin main
@@ -93,16 +96,16 @@
     % git pusho origin 브랜치명 -f   // 경고 무시하고 강제로 push하기
 
 ### 3-5. 대용량 업로드
-    //git-lfs 설치
+    # git-lfs 설치
     % brew install git-lfs    
     
-    // 해당 디렉토리로 이동후
+    # 해당 디렉토리로 이동후
     % git las install  
     
-    // 만약 이전에 해당 디렉토리에서 git add기록이 있다면 unstaging 후
+    # 만약 이전에 해당 디렉토리에서 git add기록이 있다면 unstaging 후
     % git rm -r --cached
 
-    // 업로드하려는 파일 선택
+    # 업로드하려는 파일 선택
     % git las track “파일명”
     % git add .gitattributes
 
