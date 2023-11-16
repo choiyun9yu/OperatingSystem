@@ -67,6 +67,10 @@
     % git init                                 // 깃 시작하기
     % git config --global user.name {이름}      // 전역 이름 설정 
     % git config --global user.email {깃이메일}  // 전역 이메일 설정
+
+    % git remote add {원격저장소별명} {깃주소}
+    % git pull origin main
+    % git push -u {원격저장소별명} {브랜치이름}   
     
     # git 설정으로 원격 저장소에 파일을 올릴 때 CRLF와 LF 설정 바꾸기
         false: 개행문자를 CRLF 그대로 유지
@@ -76,18 +80,13 @@
     % git config --global core.autocrlf input   // 리눅스인 경우
 
     # .gitignore_global 설정
-    echo ".DS_Store" >> ~/.gitignore_global
-    echo "._.DS_Store" >> ~/.gitignore_global
-    echo "**/.DS_Store" >> ~/.gitignore_global
-    echo "**/._.DS_Store" >> ~/.gitignore_global
-    echo ".idea" >> ~/.gitignore_global
-    echo "/.idea" >> ~/.gitignore_global
-    
-    git config --global core.excludesfile ~/.gitignore_global
-
-    % git remote add {원격저장소별명} {깃주소}
-    % git pull origin main
-    % git push -u {원격저장소별명} {브랜치이름}   
+    % echo ".DS_Store" >> ~/.gitignore_global
+    % echo "._.DS_Store" >> ~/.gitignore_global
+    % echo "**/.DS_Store" >> ~/.gitignore_global
+    % echo "**/._.DS_Store" >> ~/.gitignore_global
+    % echo ".idea" >> ~/.gitignore_global
+    % echo "/.idea" >> ~/.gitignore_global
+    % git config --global core.excludesfile ~/.gitignore_global
 
 ### 3-2. 깃 저장소 폴더로 내려받는 방법
 
