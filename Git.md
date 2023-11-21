@@ -214,16 +214,15 @@
 
 ### 9-1. 깃 뱃지 커스터 마이징 
 [Shields IO](https://shields.io/)
-[hex color code](https://html-color-codes.info/)
-[icon](https://simpleicons.org/)
+- [hex color code](https://html-color-codes.info/)
+- [icon](https://simpleicons.org/)
+- style: plastic, flat, flat-square, for-the-badge, social
+  ![image](https://github.com/choiyun9yu/OperatingSystem/assets/110392046/e73510fc-f0ce-4973-9cf0-e562291b6444)
 
-    <img src="https://img.shields.io/badge/뱃지이름-색상Hex코드?style=flat-square&logo=로고(아이콘)&logoColor=로고색상"/>
+>    https://img.shields.io/badge/{배지이름}-{css컬러}?style={스타일}&logo={로고}&logoColor={로고컬러}
 
 #### example
 <img src="https://img.shields.io/badge/Python-244BA6?style=flat-square&logo=python&logoColor=white"/>
 
     <img src="https://img.shields.io/badge/Python-244BA6?style=flat-square&logo=python&logoColor=white"/>
 
-<a href=""><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
-
-    <a href=""><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
