@@ -206,6 +206,21 @@
 4) 특정 커밋으로 돌아가고 싶을 때
 
 ## 8. 배포 버전에 태깅하기
+
     % git tag -a -m {간단한 메세지} {태그이름} {브랜치 or체크섬}  // -a로 주석이 있는 태그 생성(브랜치, 체크섬 생략하면 HEAD에 태그 생성)
     % git push {원격저장소별명} {태그이름}                     //  원격 저장소에 태그 업로드
+
+## 9. Git Badge 
+
+### 9-1. 깃 뱃지 커스터 마이징 
+[Shields IO](https://shields.io/)
+[hex color code](https://html-color-codes.info/)
+[icon](https://simpleicons.org/)
+
+    <img src="https://img.shields.io/badge/뱃지이름-색상Hex코드?style=flat-square&logo=로고(아이콘)&logoColor=로고색상"/>
+
+#### example
+<img src="https://img.shields.io/badge/Python-244BA6?style=flat-square&logo=python&logoColor=white"/>
+
+    <img src="https://img.shields.io/badge/Python-244BA6?style=flat-square&logo=python&logoColor=white"/>
 
