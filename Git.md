@@ -224,3 +224,6 @@
 
     <img src="https://img.shields.io/badge/Python-244BA6?style=flat-square&logo=python&logoColor=white"/>
 
+<img src"https://img.shields.io/badge/any_text-you_like-blue"/>
+
+    <img src"https://img.shields.io/badge/any_text-you_like-blue"/>
