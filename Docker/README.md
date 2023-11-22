@@ -121,11 +121,9 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
     $ exit(또는 ctrl + D)     // 도커 컨테이너의 내부 쉘에서 빠져나오기
     $ ctrl + P,Q             // 컨테이너의 내부 쉘에서 빠져나오기 (컨테이너 종료하지는 않음)
 
-
 #### 컨테이너 삭제
     $ docker rm {컨테이너 id 또는 이름}
-    # 모든 컨테이너 삭제
-    $ docker rm 'docekr ps -a -q'
+    $ docker rm $(docker ps -a -q)    // 모든 컨테이너 삭제
 
 #### 이미지 삭제
     $ docker rmi {옵션} {이미지id}  // 컨테이너가 있을시 강제삭제는 -f 옵션 사용 
