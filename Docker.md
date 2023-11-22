@@ -25,21 +25,27 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
 [docker-example](https://github.com/dream-ellie/docker-example)
 
 ### 2-1. Create Dockerfile
-제일 빈번히 변경되는 것을 제일 아래에 작성하는 것이 좋다.
+제일 빈번히 변경되는 것을 제일 아래에 작성하는 것이 좋다.  
 [docker example project](https://github.com/dream-ellie/docker-example)  
 [docker reference](https://docs.docker.com/engine/reference/builder/)
 
 #### Dockerfile
-    FROM baseImage      // FROM으로 사용할 베이스 이미지 명시, {node, python, gradle} 입력하고 ctrl + click 하면 사용할 수 있는 베이스 이미지 조회 
+    # 베이스 이미지 설정
+    FROM (baseImage)      // {node, python, gradle} 입력하고 ctrl + click 하면 사용할 수 있는 베이스 이미지 조회 
 
-    WORKDIR /(경로)      // WORKDIR 어떤 디렉토리의 어플리케이션 복사할 것인지 명시
-
-    COPY package.json pacakage-lock.json ./     // 의존성 복사
-
+    # 이미지 생성 과정에서 실행되는 명령어
     RUN npm ci          // 의존성 설치 {npm ci, yarn, }
 
-    COPY index.js       // 소스파일 복사
+    COPY package.json pacakage-lock.json ./    // 의존성 복사
+    COPY index.js                              // 소스파일 복사
 
+    # 이미지 내에서 명령어를 실행할(현 위치로 잡음) 위치 설정
+    WORKDIR /(경로)      // WORKDIR 어떤 디렉토리의 어플리케이션 복사할 것인지 명시
+
+    # 컨테이너 실행시 실행되는 명령어 (컨테이너 실행 시 시작되는 명령어지만 변경할 수 있음)
+    CMD ["http-server", "-p", "8080", "./public"]    // WORKDIR에서 문자열 명령어 실행
+
+    # 컨테이너가 실행시 최초에 꼭 동작해야하는 명령어가 있을 때 사용
     ENTRYPOINT ["node","index.js"]     // 실행
 
 ### 2-2. Build Image
@@ -49,17 +55,52 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
 
 ### 2-3. Run Image
 
-    % docker run -d -p 8080:8080 fun-docker     // -d는 Detached기능 (백그라운드에서 동작해야하므로),-p포트로서 Host machine의 8080과 Container의 8080 포트 연결
+    % docker run -name {서비스명} -d -v ${pwd}:/(컨테이너에들어갈 경로) -p 8080:8080 {이미지명}   
+        // -name은 서비스 이름 설정 옵션
+        // -d는 Detached기능 (백그라운드에서 동작해야하므로)
+        // -v 옵션은 컨테이너와 특정 폴더를 공유하는 것을 의미, ${pwd}현위치가:/(컨테이너에들어갈 경로)
+        // -p포트로서 Host machine의 8080과 : Container의 8080 포트 연결
     % docker ps     // 현재 실행중인 컨테이너 확인
 
 <br>
 
-## 3. 
+## 3. 도커 컴포즈 (거시적 설계도)
+도커 컴포즈는 시스템 구축과 관련된 명령어를 하나의 YAML파일에 기재해 명령어 한번에 시스템 전체를 실행하고 종료와 폐기까지 한번에 하도록 도와주는 도구이다.
 
 ### 3-1. docker-compose.yml
 
-
-
+    version: '3.8'    // 도커 컴포즈 버전 (최신버전 권장)
+    services:
+        # 서비스 이름
+        service-name1:
+            # 컨테이너 이름 설정
+            container_name: service-name1
+            # Dockerfile이 있는 위치
+            build: 
+                dockerfile: Dockerfile    // 도커파일 이름
+                context: ./service-name1  // 도커파일 위치
+            # 
+            entrypoint: []         // Dockerfile의 entrypoint를 덮어쓴다.
+            # 호스트 쪽에서는 접근 불가능하게 하고 컨테이너 사이의 통신만 가능하도록 지정
+            expose:
+                - "8080"           // 도커 내부적 포트
+            # 내부에서 개방할 포트 : 외부에서 접근할 포트
+            ports:
+                - "0000":"0000"
+            # 연결할 외부 디렉토리 : 컨테이너 내 디렉토리
+            volumes:
+                - 내컴퓨터디렉토리 : 컨테이너위치시킬디렉토리
+            # 컨테이너 환경변수 설정
+            envirionment:
+                - DBHOST=database
+            # 재시작 여부
+            restart: always        // no, unless-stopped, on-failure:exit code
+            # 단지 서비스가 시작되는 순서만 컨트롤
+            depend_on:
+                - service-name1
+                - service-name2
+                - service-name3
+            
 <br>
 
 ## 4. 기본 명령어 모음
@@ -78,7 +119,7 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
     $ docker run {이미지명}:{태그}  // pull, create, attach 를 한번에 실행하는 것과 같다
 
     $ exit(또는 ctrl + D)     // 도커 컨테이너의 내부 쉘에서 빠져나오기
-    $ ctrl + P,Q            // 컨테이너의 내부 쉘에서 빠져나오기 (컨테이너 종료하지는 않음)
+    $ ctrl + P,Q             // 컨테이너의 내부 쉘에서 빠져나오기 (컨테이너 종료하지는 않음)
 
 
 #### 컨테이너 삭제
