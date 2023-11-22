@@ -129,12 +129,14 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
     $ docker rmi {옵션} {이미지id}  // 컨테이너가 있을시 강제삭제는 -f 옵션 사용 
 
 #### 모든 컨테이너와 이미지 등 도커 요소 중지 및 삭제
-    $ docker stop $(docker ps -aq)  // 모든 컨테이너 중지
+    $ docker stop $(docker ps -qa)  // 모든 컨테이너 정료
+    $ docker kill $(docker ps -qa)  // 모든 컨테이너 강제 종료
+    
     $ docker system prune -a        // 사용되지 않는 모든 도커 요소 삭제 
 
-#### 도커 컴포즈 실행
-    $ docker-compose up
-
+#### 도커 컴포즈
+    $ docker-compose up        // 실행
+    $ docker-compose down      // 멈춤
   
 #### 도커 옵션
 |옵션|설명|
