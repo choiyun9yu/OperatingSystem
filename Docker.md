@@ -19,27 +19,32 @@ Image는 Dockerfile을 통해 만들 수 있다. Image 안에는 코드, 런타�
 ### 1-3. Shipping Containers
 Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음 깃의 외부 저장소 같은 Container Registry에 PUSH 한다. 그리고 필요한 곳에서 PULL로 Image를 가지고 온다. 물론 구동할 곳에도 Docker가 설치되어 있어야한다.
 
+<br>
+
 ## 2. Practice
 [docker-example](https://github.com/dream-ellie/docker-example)
 
 ### 2-1. Create Dockerfile
 제일 빈번히 변경되는 것을 제일 아래에 작성하는 것이 좋다.
+[docker example project](https://github.com/dream-ellie/docker-example)  
+[docker reference](https://docs.docker.com/engine/reference/builder/)
+
 #### Dockerfile
-    FROM baseImage      // FROM으로 사용할 베이스 이미지 명시
+    FROM baseImage      // FROM으로 사용할 베이스 이미지 명시, {node, python, gradle} 입력하고 ctrl + click 하면 사용할 수 있는 베이스 이미지 조회 
 
     WORKDIR /(경로)      // WORKDIR 어떤 디렉토리의 어플리케이션 복사할 것인지 명시
 
     COPY package.json pacakage-lock.json ./     // 의존성 복사
 
-    RUN npm ci          // 의존성 설치
+    RUN npm ci          // 의존성 설치 {npm ci, yarn, }
 
-    COPY index.js .     // 소스파일 복사
+    COPY index.js       // 소스파일 복사
 
     ENTRYPOINT ["node","index.js"]     // 실행
 
 ### 2-2. Build Image
 
-    % docker build -f Dockerfile -t fun-docker .    // .은 도커파일이 있는 경로, -f는 사용할 도커파일 명시, -t는 도커 이미지에 이름 부여
+    % docker build -f Dockerfile -t {도커이미지이름} .    // .은 도커파일이 있는 경로, -f는 사용할 도커파일 명시, -t는 도커 이미지에 이름 부여
     % docker images     // 도커 이미지 확인
 
 ### 2-3. Run Image
@@ -47,12 +52,23 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
     % docker run -d -p 8080:8080 fun-docker     // -d는 Detached기능 (백그라운드에서 동작해야하므로),-p포트로서 Host machine의 8080과 Container의 8080 포트 연결
     % docker ps     // 현재 실행중인 컨테이너 확인
 
-## 3. 기본 명령어 모음
+<br>
+
+## 3. 
+
+### 3-1. docker-compose.yml
+
+
+
+<br>
+
+## 4. 기본 명령어 모음
 
     $ docker -v                    // 도커 버전확인
     $ docker pull {이미지명}:{태그}   // 도커 이미지 다운만 받기
-    $ docker images               // 컴퓨터 내 도커 이미지들 보기 
-    $ docker ps                   // 동작중인 컨테이너 보기
+    $ docker images                // 컴퓨터 내 도커 이미지들 보기 
+    $ docker ps                    // 동작중인 컨테이너 보기
+    $ docker logs {컨테이너아이디}    // 동작중인 특정 컨테이너 로그 보기
 
     $ docker create {옵션} {이미지명}:{태그}    // 이미지로 컨테이너 생성하기
     $ docker start {컨테이너 id 또는 이름}      // 만들어진 컨테이너 시작하기
@@ -63,6 +79,7 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
 
     $ exit(또는 ctrl + D)     // 도커 컨테이너의 내부 쉘에서 빠져나오기
     $ ctrl + P,Q            // 컨테이너의 내부 쉘에서 빠져나오기 (컨테이너 종료하지는 않음)
+
 
 #### 컨테이너 삭제
     $ docker rm {컨테이너 id 또는 이름}
