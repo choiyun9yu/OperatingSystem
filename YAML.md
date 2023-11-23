@@ -18,24 +18,25 @@ yaml은 xml과 json 포맷과 같이 타 시스템 간에 데이터르 주고 �
 - 주석 #
   
 #### 기본 표현
-key: value 로 표현하며, 콜론(:) 다음에는 무조건 공백 문자가 와야한다.
+key: value 로 표현하며, 콜론(:) 다음에는 무조건 공백 문자가 와야한다.  
 
-  key: value
-    key_1:
-      key_2:
-        key_3:
+    key: value
+      key_1:
+        key_2:
+          key_3:
 
 #### 자료형
-int, string, boolean을 지원한다.
+int, string, boolean을 지원한다.  
 
-  int_type: 1
-  string_type: "1"
-  boolean_type: true
+    int_type: 1
+    string_type: "1"
+    boolean_type: true
 
 #### Object 표현
-  key:
-    key: value
-    key: value
+
+    key:
+      key: value
+      key: value
 
   # 또는
 
@@ -45,24 +46,25 @@ int, string, boolean을 지원한다.
   }
 
 #### List 표현
-  key:
-    - item
-    - item
-  
-  # 또는
 
-  key: [
-    item, item
-  ]
+    key:
+      - item
+      - item
+    
+    # 또는
+  
+    key: [
+      item, item
+    ]
 
 
 #### Text 표현
-(|) 기호와 (>) 기호가 있다. (|)는 줄바꿈을 포함하고, (>)는 줄바꿈을 무시한다.
+(|) 기호와 (>) 기호가 있다. (|)는 줄바꿈을 포함하고, (>)는 줄바꿈을 무시한다.  
 
-  comment_line_break: |
-    Hello my name is yun.
-    Im developer.
-
-  comment_single_line: >
-    Hello World
-    my first yml syntax.
+    comment_line_break: |
+      Hello my name is yun.
+      Im developer.
+  
+    comment_single_line: >
+      Hello World
+      my first yml syntax.
