@@ -100,7 +100,11 @@ Local Machine에서 Dockerfile을 만들고 Image를 생성한다. 그런 다음
                 - service-name1
                 - service-name2
                 - service-name3
-            
+            # 해당 서비스 상태까지 확인
+            depend_on:
+                service-name:
+                    condition: service_healthy(정상적으로 실행되고 있는지 체크, 해당 서비스에 healthcheck 옵션 필요)
+                               service_complete(정상적으로 완료되었는지 체크)
 <br>
 
 ## 4. 기본 명령어 모음
