@@ -3,6 +3,7 @@
 > [오류] permission denied while trying to connect to the Docker daemon socket at unix://var/run/docker.sock:...
 
 [해법] sudo로 권한 부여  
+######    
     % sudo chmod 0777 /var/run/docker.sock
 
 <br>
