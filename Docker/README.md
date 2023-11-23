@@ -206,9 +206,12 @@ Compose는 먼저 네트워크를 생성해놓고 각 컨테이너를 구동한 
 
     service:
         ...
+        # 네트워크 추가
         networks:
             - default
             - mynet
+        # 네트워크 DRIVER를 HOST로 설정
+        network_mode: host
 
     networks:
         mynet:
