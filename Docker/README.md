@@ -214,7 +214,10 @@ Compose는 먼저 네트워크를 생성해놓고 각 컨테이너를 구동한 
         mynet:
             driver: bridge
 
+#### pring
 
+    # 컨테이너1 에서 pring 명령을 실행시켜 컨테이너2와 연결되어 있는지 확인
+    % docker exec {컨테이너1} ping {컨테이너2}
             
 
 
