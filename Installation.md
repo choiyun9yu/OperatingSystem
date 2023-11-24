@@ -1,4 +1,4 @@
-# Ubuntu
+s# Ubuntu
 
 ## 1. Ubuntu ISO download
 [Ubuntu 22.04 LTS](https://ubuntu.com/download/desktop)  
@@ -15,4 +15,14 @@
 
 ### 3-1. DELL
 
-  [F2] - System Setup - System BIOS - Boot Settings - BIOS Boot Settings - Boot Sequence - (USB를 최상단으로) 
+  [F2] - System Setup - System BIOS - Boot Settings - BIOS Boot Settings - Hard-Disk Drive Sequence (USB를 최상단으로) 
+
+  (설정 완료하면 재부팅되고 기다리면 우분투 설치 시작됨)
+
+  *Try or install Ubuntu
+
+  (파티선 설정, 지역 설정 등 설정을 하고 설치)
+
+  설치 완료 후 Please remove the intallation medium, then press Enter: 가 나오면 USB 제거하고 Enter 
+
+### 4. 게이트웨이 설정
