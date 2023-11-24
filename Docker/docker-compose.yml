@@ -32,15 +32,12 @@ services:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
-  #    environment:
 
   mysql:
     image: mysql
     container_name: mysql
     ports:
       - "13306:13306"
-    #    volumes:
-    #    environment:
 
 volumes:
   mongodb_data:
