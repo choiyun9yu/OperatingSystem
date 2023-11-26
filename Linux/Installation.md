@@ -25,6 +25,10 @@ s# Ubuntu
 
   설치 완료 후 Please remove the intallation medium, then press Enter: 가 나오면 USB 제거하고 Enter 
 
+*BIOS: 바이오스(BIOS; Basic Input/Output System)는 운영 체제 중 가장 기본적인 소프트웨어이자 컴퓨터의 입출력을 처리하는 펌웨어다. 사용자가 컴퓨터를 켜면 시작되는 프로그램으로 주변 장치(하드웨어)와 컴퓨터 운영 체제(소프트웨어) 사이의 데이터의 흐름을 관리한다.
+
+**게이트웨이: 게이트웨이(gateway, 문화어: 망관문)는 컴퓨터 네트워크에서 서로 다른 통신망, 프로토콜을 사용하는 네트워크 간의 통신을 가능하게 하는 컴퓨터나 소프트웨어를 두루 일컫는 용어, 즉 다른 네트워크로 들어가는 관문(입구) 역할을 하는 네트워크 포인트이다.
+
 ### 4. 게이트웨이 설정 with netplan
 Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 
@@ -59,11 +63,11 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 
 #### 게이트웨이 ip 찾기
     % ip route      // 라우트 정보 확인, default vi 뒤에 ip 주소가 나중에 쓸 게이트웨이 주소
-![img.png](img.png)
+![img.png](../img/img-9.png)
 
 #### 이더넷 이름 찾기
     % ip addr       // 1: lo: 아래 2: 다음에 위치한게 이더넷 이름
-![img_1.png](img_1.png)
+![img_1.png](../img/img_10.png)
 
 ### 4-2. 기타 권한 설정 및 적용
     % sudo chmod 600 /etc/netplan/ {탭 눌러서 .yaml 파일 선택}
