@@ -98,4 +98,14 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
     % sudo apt install openssh-client   // openssh-client 설치
     % ssh {userName}@{IpAddress}
 
+
+### 4-4. VScode Rmote SSH
+[ref](https://inpa.tistory.com/entry/VSCode-%F0%9F%92%BD-Remote-SSH-%EC%82%AC%EC%9A%A9%EB%B2%95-AWS%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%B4%EC%84%9C-%EC%BD%94%EB%94%A9%ED%95%98%EC%9E%90)
+- [Remote - SSH 확장팩 설치]
+- [좌측 모니터 모양의 원격 메뉴 선택] - [접속할 SSH 정보 입력]
+- [SSH 연결 설정 파일을 저장할 장소 선택]
+- [새창에서 remote 연결하기]
+- [새창에서 서버 Platform 선택]
+- [SSH 호스트 계정 비밀번호 입력]
+
     
