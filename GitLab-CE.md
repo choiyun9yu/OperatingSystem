@@ -1,4 +1,5 @@
 # Git Lab Community Edition
+- Raspberry pi 4 4GB로 돌리면 메모리가 부족해서 사용하기 어려움
 
 ## 1. Installation
 
