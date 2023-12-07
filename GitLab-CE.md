@@ -25,5 +25,5 @@
     # 최초 접속 ID는 root이고 비밀번호는 아래 명령으로 확인 가능
     % sudo cat /etc/gitlab/initial_root_password 
 
-    
+### 2-1. 초기 비밀번호가 제대로 작동하지 않는 경우
     
