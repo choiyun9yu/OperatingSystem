@@ -76,9 +76,9 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
     # WARNING:root:Cannot call Open vSwitch: ovsdb-server.service is not running 발생할 경우
     % sudo apt install openvswitch-switch
     
-### 4-3. ssh
+## 5. SSH
 
-    # SERVER SIDE
+### 5-1. Server Side
     % sudo apt install openssh-server   // openssh-server 설치
     % sudo systemctl status ssh         // 상태 확인
 
@@ -93,13 +93,11 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
     % sudo systemctl disable ssh  // 부팅 중 ssh 비활성화
     % sudo systemctl enable ssh   // 부팅 중 ssh 활성화
 
-######
-    # CLIENT SIDE
+### 5-2. CLIENT SIDE
     % sudo apt install openssh-client   // openssh-client 설치
     % ssh {userName}@{IpAddress}
 
-
-### 4-4. VScode Rmote SSH
+### 5-3. VScode Rmote SSH
 [ref](https://inpa.tistory.com/entry/VSCode-%F0%9F%92%BD-Remote-SSH-%EC%82%AC%EC%9A%A9%EB%B2%95-AWS%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%B4%EC%84%9C-%EC%BD%94%EB%94%A9%ED%95%98%EC%9E%90)
 - [Remote - SSH 확장팩 설치]
 - [좌측 모니터 모양의 원격 메뉴 선택] - [접속할 SSH 정보 입력]
@@ -108,4 +106,28 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 - [새창에서 서버 Platform 선택]
 - [SSH 호스트 계정 비밀번호 입력]
 
-    
+## 6. FTP
+
+### 6-1. Server Side
+    # 서비스 설치
+    % sudo apt install vsftpd  
+    # 서비스 설정 
+    % vim /etc/vsftpd.conf
+######
+    local_enable=YES
+    write_enable=YES
+    local_umask=022
+    chroot_local_user=YES
+    chroot_list_enable=YES
+    chroot_list_file=/etc/vsftpd.chroot_list
+    allow_writeable_chroot
+    utf8_filesystem=YES
+    local_root={루트 디렉토리}
+######
+    # 서비스 시작
+    % sudo systemctl restart vsftpd 
+    % sudo systemctl enable vsftpd  
+
+    # 
+    % sudo vim /etc/vsftpd.chroot_list
+  
