@@ -13,7 +13,7 @@
     % sudo apt -y install gitlab-ce
 
     # gitlab 설정 변경
-    % sudo vim /etc/gitlab/gitlab.rb  // external_url부분을 사용할 주소로 변경한다.
+    % sudo vim /etc/gitlab/gitlab.rb  // external_url부분을 사용할 주소로 변경가능 / 기본은 자기 ip주소
     % sudo gitlab-ctl reconfigure     // 설정 변경 반영
 
     % sudo gitlab-ctl status    // 상태
