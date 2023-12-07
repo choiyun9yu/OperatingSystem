@@ -44,7 +44,7 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 
     % sudo vim /etc/netplan/ (탭 눌러스 .yaml 파일 편집기 열기)
 ######
-    netwokr:
+    network:
       version: 2
       renderer: networkd
       ethernets:
