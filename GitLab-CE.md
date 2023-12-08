@@ -27,4 +27,18 @@
     % sudo cat /etc/gitlab/initial_root_password 
 
 ### 2-1. 초기 비밀번호가 제대로 작동하지 않는 경우
-    
+
+
+## 3. Delete
+
+    % sudo gitlab-ctl uninstall
+    % sudo gitlab-ctl cleanse
+    % sudo gitlab-ctl remove-accounts
+    % sudo dpkg -P gitlab-ce || sudo yum -y remove gitlab-ce
+
+    # 이후 아래 폴더 삭제
+    /opt/gitlab
+    /var/opt/gitlab
+    /etc/gitlab
+    /var/log/gitlab
+    /etc/yum.repos.d/gitlab 관련파일
