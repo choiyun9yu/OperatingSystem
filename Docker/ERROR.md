@@ -1,10 +1,13 @@
 # DOCKER ERROR
 
 ### Error: permission denied while trying to connect to the Docker daemon socket at unix://var/run/docker.sock:...
-
->[해법] sudo로 권한 부여  
+>[해법1] sudo로 권한 부여  
 ######    
     % sudo chmod 0777 /var/run/docker.sock
+######
+>[해법2] 권한 그룹에 지금 로그인한 사용자를 포함 시키기
+######
+    % sudo usermod -aG docker $USER
 
 <br>
 
