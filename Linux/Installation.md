@@ -63,11 +63,11 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 
 #### 게이트웨이 ip 찾기
     % ip route      // 라우트 정보 확인, default vi 뒤에 ip 주소가 나중에 쓸 게이트웨이 주소
-![img.png](../img/img-9.png)
+![img.png](../.img/img-9.png)
 
 #### 이더넷 이름 찾기
     % ip addr       // 1: lo: 아래 2: 다음에 위치한게 이더넷 이름
-![img_1.png](../img/img_10.png)
+![img_1.png](../.img/img_10.png)
 
 ### 4-2. 기타 권한 설정 및 적용
     % sudo chmod 600 /etc/netplan/ {탭 눌러서 .yaml 파일 선택}
