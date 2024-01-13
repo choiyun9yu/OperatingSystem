@@ -316,6 +316,8 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     # Cannot connect to the Docker daemon at unix:/var/run/docker/sock ...
     $ sudo chmod 0777 /var/run/docker.sock  
 
+    % sudo usermod -aG docker $USER    // 도커 그룹에 유저를 추가
+
 #### mariaDB
 
     $ sudo apt instll mariadb-server
