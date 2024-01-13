@@ -340,18 +340,7 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
 #### MongoDB
 
-    # Gnupg 패키지를 설치
-    $ sudo apt-get install gnupg -y
-
-    # GPG 키를 다운로드하고 추가
-    $ sudo wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
-
-    # 리포지토리를 추가
-    $ sudo echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.lis
-
-    # 설치
-    sudo apt-get update -y
-    sudo apt-get install mongodb-org -y
+    # 인터넷에 검색하여 그때 그때 최신 버전 설치 방법 확인
     
     # MongoDB 시작
     $ sudo systemctl start mongod
