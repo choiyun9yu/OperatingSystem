@@ -265,11 +265,17 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
     // .NET SDK 설치
     % sudo apt-get update && \
-      sudo apt install -y apt-transport-https dotnet-sdk-5.0
+      sudo apt-get install -y dotnet-sdk-8.0
+
+    // .NET RunTime 설치
+    % sudo apt-get update && \
+      sudo apt-get install -y aspnetcore-runtime-8.0
 
     // 설치 버전 확인
     % dotnet --list-sdks
     % dotnet --list-runtimes
+
+    // .NET 설치 시 버전을 찾을 수 없는 경우 가이드에 따라 설치
     
 #### git 
 
