@@ -79,6 +79,8 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
     % sudo chmod 600 /etc/netplan/ {탭 눌러서 .yaml 파일 선택}
     % sudo netplan apply
 
+    % curl ifconfig.me   // 외부 ip 확인
+
     # WARNING:root:Cannot call Open vSwitch: ovsdb-server.service is not running 발생할 경우
     % sudo apt install openvswitch-switch
     
