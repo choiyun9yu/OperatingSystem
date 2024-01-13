@@ -288,7 +288,7 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     $ git config --local --list                 # 작성 확인
     $ git config --global core.autocrlf true    # 맥,윈도우 간 개행문자 다름으로 텍스트 깨지는거 보정
 
-    [git 명령어 정리](https://velog.io/@yun9yu/Git-hub)
+[git 명령어 정리](https://github.com/choiyun9yu/OperatingSystem/blob/main/Git.md)
     
 #### docker 
 
@@ -327,16 +327,16 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
 #### mariaDB
 
-    $ sudo apt instll mariadb-server
+    $ sudo apt install mariadb-server
     $ sudo apt-get install mariadb-client
-    $ sudo mysql_secure_installation
+    $ sudo mysql_secure_installation    // 나는 주로 0000 으로 함, 포트는 3306
     
     $ sudo service mysql start 
     $ sudo mysql
     $ sudo service mysql stop
     $ sudo service mysql restart
 
-    [sql 명령어 모음](https://github.com/choiyun9yu/Database)
+[sql 명령어 모음](https://github.com/choiyun9yu/Database/tree/main/RDBMS)
 
 #### HTTPie
 
