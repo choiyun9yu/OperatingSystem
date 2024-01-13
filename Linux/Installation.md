@@ -21,7 +21,13 @@ s# Ubuntu
 
   *Try or install Ubuntu
 
-  (파티선 설정, 지역 설정 등 설정을 하고 설치)
+#### 파티션 설정 
+- Reserved BIOS boot area: 1 MB
+- EFI: 512 MB
+- Swap Area: RAM / 2
+- / : 20480 MB
+- /home : remain all 
+
 
   설치 완료 후 Please remove the intallation medium, then press Enter: 가 나오면 USB 제거하고 Enter 
 
