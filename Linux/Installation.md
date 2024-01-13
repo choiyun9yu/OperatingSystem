@@ -99,6 +99,15 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
     % sudo systemctl disable ssh  // 부팅 중 ssh 비활성화
     % sudo systemctl enable ssh   // 부팅 중 ssh 활성화
 
+#### 서버가 절전모드로 빠지는 것을 방지 
+
+    // 절전모드 설정되어 있는지 확인 (Loaded 가 loaded 로 되어 있으면 절전 모드 설정이 된 것)
+    % systemctl status sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+    // 절전 모드 설정 또는 해제
+    % sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+    
+
 ### 5-2. CLIENT SIDE
     % sudo apt install openssh-client   // openssh-client 설치
     % ssh {userName}@{IpAddress}
