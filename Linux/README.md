@@ -325,7 +325,7 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
     % sudo usermod -aG docker $USER    // 도커 그룹에 유저를 추가
 
-#### mariaDB
+#### MariaDB
 
     $ sudo apt install mariadb-server
     $ sudo apt-get install mariadb-client
@@ -335,6 +335,22 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     $ sudo mysql
     $ sudo service mysql stop
     $ sudo service mysql restart
+
+    // 서버 외부 접속 허용 
+    % sudo vim /etc/mysql/mariadb.conf.d/50-server.cnf 
+    bind-address = 0.0.0.0
+    
+    % sudo systemctl restart mariadb
+
+    // 계정 생성 
+    > CREATE USER 'yun9yu'@'%' IDENTIFIED BY '0000';    // 비밀 번호 주로 0000
+    // 모든 호스트에 접속 하용 
+    > GRANT ALL PRIVILEGES ON *.* TO 'yun9yu'@'%' WITH GRANT OPTION;
+    //
+    > FLUSH PRIVILEGES;
+
+    // 외부에서 접속 
+    $ sudo mysql -h [MariaDB_서버_IP] -u [사용자명] -p
 
 [sql 명령어 모음](https://github.com/choiyun9yu/Database/tree/main/RDBMS)
 
