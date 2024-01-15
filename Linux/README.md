@@ -380,6 +380,7 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     $ sudo apt install ./{다운받은 파일명}
 
 #### inteliJ
+다운로드 링크는 getbrains 홈페이지에서 찾을 수 있음 
 
     # 다운로드
     $ wget https://download.jetbrains.com/idea/[다운로드파일명.tar.gz]
@@ -391,8 +392,11 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     $ sudo mv [파일명] /opt/[파일명]
 
     # 별칭설정
-    $ alias intelij='/opt/[경로이동한 파일명]/bin/idea.sh' >>~/.bashrc
+    $ alias intelij='/opt/[경로이동한 파일명]/bin/idea.sh' >> ~/.zshrc
+    (예시) % echo "alias intelij='~/download/idea-IU-233.13135.103/bin/idea.sh'" >> ~/.zshrc
 
+    $ source ~/.zshrc
+    
     # 실행
     $ intelij
 
