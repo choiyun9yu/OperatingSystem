@@ -85,6 +85,7 @@
     % echo "**/.DS_Store" >> ~/.gitignore_global
     % echo "**/._.DS_Store" >> ~/.gitignore_global
     % echo ".idea" >> ~/.gitignore_global
+    % echo ".iml" >> ~/.gitignore_global
     % echo "**/.idea" >> ~/.gitignore_global
     % echo ".vscode" >> ~/.gitignore_global
     % echo "Thumbs.db" >> ~/.gitignore_global
