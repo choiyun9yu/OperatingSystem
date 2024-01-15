@@ -129,7 +129,17 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 - [새창에서 서버 Platform 선택]
 - [SSH 호스트 계정 비밀번호 입력]
 
-## 6. FTP
+## 6. X11
+    % apt install xorg
+
+### 6-1. Server Side
+    % vim /etc/ssh/sshd_config  // X11Forwarding yes 가 주석해제 되어 있는지 확인
+    % sudo service ssh restart  // 확인 후 재시작
+
+### 6-2. Client Side
+    % ssh -X username@remote_ip_address
+
+## 7. FTP
 
 ### 6-1. Server Side
     # 서비스 설치
