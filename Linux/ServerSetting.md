@@ -132,12 +132,33 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 ## 6. X11
     % apt install xorg
 
-### 6-1. Server Side
+### 6-1. Linux - Linux 
+#### Server Side
     % vim /etc/ssh/sshd_config  // X11Forwarding yes 가 주석해제 되어 있는지 확인
     % sudo service ssh restart  // 확인 후 재시작
 
-### 6-2. Client Side
+#### Client Side
     % ssh -X username@remote_ip_address
+
+### 6-2. Linux - macOS
+[reference](https://csj000714.tistory.com/788)
+
+#### Server Side (Linux)
+    % sudo apt-get update
+    % sudo apt-get -y install xorg xrdp xserver-xorg mesa-utils xauth gdm3
+
+    % xhost +local:root
+
+#### Client Side (macOS)
+    % brew install --cask xquartz  // 설치 후 재부팅
+
+XQuartz 설정 - 보안 탭 "Allow connections from network clients"
+
+    % nano ~/.zshrc
+
+    xhost + <Server IP>
+
+    % source ~/.zshrc
 
 ## 7. FTP
 
