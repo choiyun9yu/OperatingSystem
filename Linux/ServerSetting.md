@@ -150,7 +150,7 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
     % xhost +local:root
 
 #### Client Side (macOS)
-    % brew install --cask xquartz  // 설치 후 재부팅
+    % brew install --cask xquartz  // 설치 후 재부팅, 여기까지하니까 됨
 
 XQuartz 설정 - 보안 탭 "Allow connections from network clients"
 
