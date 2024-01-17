@@ -24,8 +24,8 @@ s# Ubuntu
 #### 파티션 설정 
 - Reserved BIOS boot area: 1 MB
 - EFI: 512 MB
-- Swap Area: RAM * 2 ~ 4
-- / : 20480 MB
+- Swap Area: RAM * 2 ~ 4 또는 RAM / 2
+- / : 10240000 MB  (100GB 이상이 적당, SSD가 너무 작으면 /과 /home 나누지 않는 것이 좋음)
 - /home : remain all 
 
 
