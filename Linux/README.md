@@ -276,6 +276,10 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     % dotnet --list-runtimes
 
     // .NET 설치 시 버전을 찾을 수 없는 경우 가이드에 따라 설치
+
+    // 환경변수 설치 
+    % echo 'export PATH=$PATH:~/.dotnet' >> ~/.zshrc
+
     
 #### git 
 
