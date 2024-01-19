@@ -367,7 +367,19 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 
 #### MongoDB
 
-    # 인터넷에 검색하여 그때 그때 최신 버전 설치 방법 확인
+    # 필수 구성 요소 패키지 설치 
+    % sudo apt install software-properties-common gnupg apt-transport-https ca-certificates -y
+
+    # 공개키 가져오기
+    % curl -fsSL https://pgp.mongodb.com/server-7.0.asc |  sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+
+    % echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+
+    % cat /etc/apt/sources.list.d/mongodb-org-7.0.list
+    % sudo apt update
+    % sudo apt install mongodb-org -y
+
+    % mongod --version
     
     # MongoDB 시작
     $ sudo systemctl start mongod
