@@ -325,20 +325,20 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
 #### Docker ERROR 
 
     # Cannot connect to the Docker daemon at unix:/var/run/docker/sock ...
-    $ sudo chmod 0777 /var/run/docker.sock  
+    % sudo chmod 0777 /var/run/docker.sock  
 
     % sudo usermod -aG docker $USER    // 도커 그룹에 유저를 추가
 
 #### MariaDB
 
-    $ sudo apt install mariadb-server
-    $ sudo apt-get install mariadb-client
-    $ sudo mysql_secure_installation    // 나는 주로 0000 으로 함, 포트는 3306
+    % sudo apt install mariadb-server
+    % sudo apt-get install mariadb-client
+    % sudo mysql_secure_installation    // 나는 주로 0000 으로 함, 포트는 3306
     
-    $ sudo service mysql start 
-    $ sudo mysql
-    $ sudo service mysql stop
-    $ sudo service mysql restart
+    % sudo service mysql start 
+    % sudo mysql
+    % sudo service mysql stop
+    % sudo service mysql restart
 
     // 서버 외부 접속 허용 
     % sudo vim /etc/mysql/mariadb.conf.d/50-server.cnf 
@@ -354,7 +354,7 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     > FLUSH PRIVILEGES;
 
     // 외부에서 접속 
-    $ sudo mysql -h [MariaDB_서버_IP] -u [사용자명] -p
+    % sudo mysql -h [MariaDB_서버_IP] -u [사용자명] -p
 
 [sql 명령어 모음](https://github.com/choiyun9yu/Database/tree/main/RDBMS)
 
@@ -382,39 +382,66 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     % mongod --version
     
     # MongoDB 시작
-    $ sudo systemctl start mongod
-    # MongoDB 데몬을 재부팅 시 시작되도록 활성화
-    $ sudo systemctl enable --now mongod
+    % sudo systemctl start mongod
+    
+    # MongoDB 데몬을 재부팅 시 시작되도록 활성화 (선택)
+    % sudo systemctl enable --now mongod
 
     # 버전 및 주소 확인
-    $ mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+    % mongosh --eval 'db.runCommand({ connectionStatus: 1 })'
+
+    # 몽고 쉘 열기
+    % mogosh
+    
+
+#### 외부 접속 허용
+    # 설정
+    % sudo vim /etc/mongod.conf
+    (bindIp: 127.0.0.1 을 0.0.0.0)
+    (security:
+      authorization: 'enabled')
+
+    # 계정 추가하기
+    > use admin
+    > db.createUser({
+        user: 'yun9yu',
+        pwd: '0000',
+        roles: [{
+            role:'root',    // 권한 
+            db:'adbmin'}]   // 어떤 데이터베이스에 대한 권한인지 명시
+        })
+
+    # 접속
+    % mongosh mongodb://{user}:{pwd}@ipaddress:27017/{db}
+    
+    
 
 #### MongoDB compass
 [Download link](https://www.mongodb.com/try/download/compass)
 
     # 다운받음 파일이 있는 경로에서
-    $ sudo apt install ./{다운받은 파일명}
+    % sudo apt install ./{다운받은 파일명}
 
 #### inteliJ
 다운로드 링크는 getbrains 홈페이지에서 찾을 수 있음 
 
     # 다운로드
-    $ wget https://download.jetbrains.com/idea/[다운로드파일명.tar.gz]
+    % wget https://download.jetbrains.com/idea/[다운로드파일명.tar.gz]
     
     # 압출풀기
-    $ tar xvfz [압축파일명.tar.gz]
+    % tar xvfz [압축파일명.tar.gz]
 
     # 사용할 경로로 이동 (개발툴 opt 경로에 두는 습관 나쁘지 않음)
-    $ sudo mv [파일명] /opt/[파일명]
+    % sudo mv [파일명] /opt/[파일명]
 
     # 별칭설정
-    $ alias intelij='/opt/[경로이동한 파일명]/bin/idea.sh' >> ~/.zshrc
+    % alias intelij='/opt/[경로이동한 파일명]/bin/idea.sh' >> ~/.zshrc
     (예시) % echo "alias intelij='~/download/idea-IU-233.13135.103/bin/idea.sh'" >> ~/.zshrc
 
-    $ source ~/.zshrc
+    % source ~/.zshrc
     
     # 실행
-    $ intelij
+    % intelij
 
 
 
