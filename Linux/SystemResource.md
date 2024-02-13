@@ -2,10 +2,6 @@
 
 ## 1. CPU
 
-#### cpu 점유율 확인
-
-    % top
-
 #### cpu 전체 정보 확인
 
     % cat /proc/cpuinfo
@@ -31,6 +27,8 @@
 ####  ram 사용량 확인
 
     % free -h
+
+    % top (shift + m 누르면 정렬된다.)
 
 ## 3.  SSD/HDD
 
