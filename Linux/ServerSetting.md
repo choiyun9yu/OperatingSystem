@@ -185,4 +185,44 @@ XQuartz 설정 - 보안 탭 "Allow connections from network clients"
 
     # 
     % sudo vim /etc/vsftpd.chroot_list
-  
+
+
+
+# ERROR
+### 문제
+> 사무실 이사 후 서버를 부팅 했는데 emergency mode 로 부팅 됨 
+
+### 해법 
+> /etc/fstab 에서 UUID 몇가지를 지우고 재부팅
+
+### 해설
+- /etc/fstab 파일은 Linux 시스템에서 파일 시스템을 마운트 하는데 사용되는 설정 파일이다.
+- 이 파일에는 시스템 부팅 시 자동으로 마운트되어야 하는 파일 시스템들과 관련된 정보가 포함되어 있다.
+  - 장치 정보: 각 파일 시스템이 마운트되어야 할 장치의 식별자 (예: UUID, 장치 경로 등)가 포함된다.
+  - 마운트 포인트: 각 파일 시스템이 마운트 될 디렉토리의 경로가 지정된다.
+  - 파일 시스템 유형: 마운트될 파일 시스템의 유형 (예: ext4, ntfs 등)이 지정된다.
+  - 옵션: 마운트 옵션들이 포함된다. 이 옵션들은 팡리 시스템 동작과 관련이 있다. 예를 들어 읽기/쓰기 권한, 자동 마운트 여부 등이 설정될 수 있다.
+  - 덤프 여부: 파일 시스템 덤프 도구를 통해 백업 여부를 나타내는 정수 값이 포함된다.
+  - 파일 시스템 체크 여부: 부팅 시 파일 시스템을 자동으로 체크할 지 여부를 나타내는 정수 값이 포함된다.
+
+            # /etc/fstab: static file system information.
+            #
+            # Use 'blkid' to print the universally unique identifier for a device; this may
+            # be used with UUID= as a more robust way to name devices that works even if
+            # disks are added and removed. See fstab(5).
+            #
+            # <file system> <mount point>   <type>  <options>       <dump>  <pass>
+            /dev/sda1       /boot           ext4    defaults        0       2
+            /dev/sda2       none            swap    sw              0       0
+  - 이 예시의 첫 번째 줄은 /dev/sda1 장치를 /boot 디렉토리에 ext4 파일 시스템으로 마운트하고 있고
+  - 두 번째 줄은 스왑 파일 시스템을 none으로 정의하고 있다.
+ 
+#### UUID(Universally Unique Identifier)
+- 각각의 파일 시스템이나 장치를 고유하게 식별하는 데 사용되는 식별자 이다.
+- 파일 시스템이나 장치를 마운트할 때, 장치 경로(/dev/sda1, /dev/sdb2 등)를 사용하는 것보다 UUID를 사용하는 것이 더 안전하며 유연성 있다.
+- 왜냐하면 장치 경로는 시스템이 장치를 인식하는 방식에 의존하기 때문에 변경될 수 있지만, UUID는 각 파일 시스템이나 장치에 대해 고유하게 생성되기 때문에 안정적으로 식별할 수 있다.
+- 예를 들어, /etc/fstab 파일에서 UUID를 사용하여 파일 시스템을 마운트하는 경우
+
+        UUID=4d56d3c6-8b01-4d40-a5aa-97f3c0b7f1e2 /mnt ext4 defaults 0 2
+- 위의 예시에서 UUID=4d56d3c6-8b01-4d40-a5aa-97f3c0b7f1e2 는 파일 시스템의 UUID를 나타내며
+- 이것은 /mnt 디렉토리에 ext4 파일 시스템으로 마운트되어야 함을 나타낸다.        
