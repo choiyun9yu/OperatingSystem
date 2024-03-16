@@ -22,9 +22,9 @@ s# Ubuntu
   *Try or install Ubuntu
 
 #### 파티션 설정 
-- Reserved BIOS boot area: 1 MB
-- EFI: 512 MB
-- Swap Area: RAM * 2 ~ 4 또는 RAM / 2
+- Reserved BIOS boot area: 1 MB  // 디스크 시작 지점
+- EFI: 512 MB                    // 부트 로더와 부팅 관련 라이브러리 저장 공간 
+- Swap Area: RAM * 2 ~ 4 또는 RAM // 디스크 끝 부분 저장
 - / : 10240000 MB  (100GB 이상이 적당, SSD가 너무 작으면 /과 /home 나누지 않는 것이 좋음)
 - /home : remain all 
 
