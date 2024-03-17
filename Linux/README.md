@@ -383,6 +383,9 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     
     # MongoDB 시작
     % sudo systemctl start mongod
+
+    # 인증 모드 시작
+    % sudo service mongod restart --auth
     
     # MongoDB 데몬을 재부팅 시 시작되도록 활성화 (선택)
     % sudo systemctl enable --now mongod
