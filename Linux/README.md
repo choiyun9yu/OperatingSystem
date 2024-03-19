@@ -19,7 +19,7 @@
 |/lost+found| 결함이 있는 파일에 대한 정보가 저장되는 디렉터리|
 
 # Ubuntu
-
+sudo apt install vim python3 python3-pip python3-dev -y 
 터미널창 열기: ctrl + alt + T  
 
     % cat /etc/issue     // 현재 우분투 버전 확인
@@ -165,18 +165,41 @@
     $ sudo apt-get install cmake
     $ cmake --version
  
-#### poetry
+#### python
 
     # python3 is python
     % sudo apt install python-is-python3
 
-    # install
+    # poetry
     % curl -sSL https://install.python-poetry.org | python3 -
     % echo 'export PATH="/home/{사용자이름}/.local/bin:$PATH"' >> ~/.zprofile
     % . ~/.zprofile
     % poetry --version
     
     % poetry self update  
+
+    # jupyter lab
+    % sudo apt install python3-pip python3-dev -y 
+    % pip install jupyterlab
+    % vim ~/.zshrc
+        export PATH=/home/jupyter/.local/bin:$PATH
+
+    % jupyter lab --generate-config   // config file 생성
+
+    
+    % vim ~/.jupyter/jupyter_lab_config.py      // 환경 설정 
+        c = get_config()  #noqa
+        c.JupyterApp.config_file_name = 'jupyer_lab_config.py'
+        c.ServerApp.allow_origin = '*'     // 외부접속 허용
+        c.ServerApp.notebook_dir = '/home/yun9yu/Workspace/jupyterlab'    // 디렉터리 루트 경로
+        c.ServerApp.open_brower = False    // 실행 시 브라우저 오픈 여부
+        c.ServerApp.ip = '192.168.219.110' // 내부 ip
+        c.ServerApp.port = 8080            // 포트 번호 
+        c.ServerApp.password = 'your password hash'    // 비밀번호 (나중에 자동으로 써지는 듯)
+
+    % jupyter lab password            // password 설정  
+      **argon2: {해시값}**
+
 
 #### java
 
