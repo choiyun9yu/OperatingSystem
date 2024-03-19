@@ -199,23 +199,26 @@
 
 #### node.js
 
+    % sudo apt update
+    % sudo apt install nodejs npm
+
     # npm 특정버전 업그레이드
-    $ sudo npm install -g npm@x.x.x
+    % sudo npm install -g npm@x.x.x
 
     # nvm 대신 n을 사용
-    $ npm install -g n 
+    % npm install -g n 
     
     # node.js 특정버전 업그레이드
-    $ sudo 
-    n stable     // 안정 버전 설치
-    n latest      //  최신 버전 설치
-    n lts            // lts 버전 설치
-    n x.x.x        // 특정 버전 설치 ( x.x.x 버전 )
+    % sudo 
+        n stable     // 안정 버전 설치
+        n latest      //  최신 버전 설치
+        n lts            // lts 버전 설치
+        n x.x.x        // 특정 버전 설치 ( x.x.x 버전 )
 
     # 버전관리
-    $ n ls          # 설치 목록 보기
-    $ sudo n        # 방향키로 버전 선택 후 엔트
-    $ n rm x.x.x    # 특정 버전 삭제
+    % n ls          # 설치 목록 보기
+    % sudo n        # 방향키로 버전 선택 후 엔트
+    % n rm x.x.x    # 특정 버전 삭제
 
 #### yarn
 
