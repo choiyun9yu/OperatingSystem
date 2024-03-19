@@ -316,8 +316,11 @@ package-lock.json과 비슷한 기능을 한다고 생각하면 된다.
     $ sudo apt install docker-compose
     $ docker version
     
-    $ sudo systemctl status docker    # 도커 실행상태 확인
-    $ sudo docker run hello-world     # 도커 실행
+    $ sudo systemctl status docker        # 도커 실행상태 확인
+    $ sudo systemctl stop docker          # 도커 종료
+    $ sudo systemctl stop docker.socket   # 소켓 종료   
+    
+    $ sudo docker run hello-world         # 도커 실행
 
     $ sudo docker stop [containderName]      # 도커 종료
     $ sudo docker kill $(sudo docker ps -qa) # 모든 도커 강제 종료
