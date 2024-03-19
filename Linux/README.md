@@ -200,6 +200,27 @@ sudo apt install vim python3 python3-pip python3-dev -y
     % jupyter lab password            // password 설정  
       **argon2: {해시값}**
 
+    # systemd service 설정 
+    % sudo vim /etc/systemd/system/jupyter.service  // jupyter.service 설정파일 만들기
+        [Unit]
+        Description=Jupyter Notebook
+        
+        [Service]
+        Type=simple
+        PIDFile=/run/jupyter.pid
+        ExecStart=/home/yun9yu/.local/bin/jupyter-lab --config=/home/yun9yu/.jupyter/jupyter_lab_config.py
+        User=yun9yu
+        Group=jupyter
+        WorkingDirectory=/home/yun9yu/Notebooks/Workspace/jupyterlab
+        Restart=always
+        RestartSec=10
+        
+        [Install]
+        WantedBy=multi-user.target
+
+    % systemctl daemon-reload
+    % systemctl start jupyter
+    % systemctl enable jupyter
 
 #### java
 
