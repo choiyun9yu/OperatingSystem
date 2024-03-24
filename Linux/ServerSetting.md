@@ -88,6 +88,10 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 
     # WARNING:root:Cannot call Open vSwitch: ovsdb-server.service is not running 발생할 경우
     % sudo apt install openvswitch-switch
+
+### 4-3. GUI manual ip setting
+![image](https://github.com/choiyun9yu/OperatingSystem/assets/110392046/5b4f9a3a-6ace-4195-b82a-7208aeb9aec6)
+
     
 ## 5. SSH
 
