@@ -223,7 +223,7 @@ sudo apt install vim python3 python3-pip python3-dev -y
     % systemctl start jupyter
     % systemctl enable jupyter
 
-#### SDKMAN
+#### SDKMAN _ java
 
     # SDKMAN으로 Gradle 설치
     % curl -s "https://get.sdkman.io" | bash    // SDKMAN 설치
@@ -249,7 +249,7 @@ sudo apt install vim python3 python3-pip python3-dev -y
 #### node.js
 
     % sudo apt update
-    % sudo apt install nodejs npm
+    % sudo apt install npm
 
     # npm 특정버전 업그레이드
     % sudo npm install -g npm@x.x.x
