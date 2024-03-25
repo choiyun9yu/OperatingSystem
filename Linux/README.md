@@ -223,24 +223,28 @@ sudo apt install vim python3 python3-pip python3-dev -y
     % systemctl start jupyter
     % systemctl enable jupyter
 
-#### java
+#### SDKMAN
 
-    $ sudo apt-get install openjdk-11-jdk
-    $ java -verison
-    $ javac -version
-
-    # 환경변수 설정
-    $ sudo vi ~/.bashrc
-    $ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-    $ source ~/.bashrc
-    $ echo $JAVA_HOME
+    # SDKMAN으로 Gradle 설치
+    % curl -s "https://get.sdkman.io" | bash    // SDKMAN 설치
+    % echo 'source "$HOME/.sdkman/bin/sdkman-init.sh"' >> ~/.zshrc
+    // 터미널 재시작
     
-    # 버전 관리
-    $ update-alternatives --list java    # 설치된 자바 버전 확인
-    $ sudo update-alternatives --config java
-    $ sudo update-alternatives --config javac
+    % sdk version
+    % sdk list java                      // 설치 가능 버전 조회 (방향키로 움직여서 선택)
+    % sdk install java {설치 버전}         // Java 버전 설치 
+    % sdk uninstall java {지우려는 버전}    // Java 버전 지우기 
+    % sdk use java {사용하려는 버전}        // Java 버전 변경  
+    % sdk current                        // 현재 사용 버전 확인
+    % sdk default java {사용하려는 버전}    // Java 디폴터 버전 설정
 
-    $ sudo apt-get purge poenjdk*    $ 자바 삭제
+    % echo $JAVA_HOME                    // 터미널 재시작하면 환경 변수 설정되어 있음
+
+    % sdk install gradle {설치 버전}           // SDK로 Gradle 설치
+
+
+    # SDKMAN 지우기
+    % rm -rf ~/.sdkman
 
 #### node.js
 
