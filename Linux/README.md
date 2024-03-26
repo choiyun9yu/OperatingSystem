@@ -185,7 +185,6 @@ sudo apt install vim python3 python3-pip python3-dev -y
         export PATH=/home/jupyter/.local/bin:$PATH
 
     % jupyter lab --generate-config   // config file 생성
-
     
     % vim ~/.jupyter/jupyter_lab_config.py      // 환경 설정 
         c = get_config()  #noqa
@@ -195,10 +194,14 @@ sudo apt install vim python3 python3-pip python3-dev -y
         c.ServerApp.open_brower = False    // 실행 시 브라우저 오픈 여부
         c.ServerApp.ip = '192.168.219.110' // 내부 ip
         c.ServerApp.port = 8080            // 포트 번호 
-        c.ServerApp.password = 'your password hash'    // 비밀번호 (나중에 자동으로 써지는 듯)
+        c.ServerApp.password = 'argone2:....su'    // 비밀번호 (나중에 자동으로 써지는 듯)
 
-    % jupyter lab password            // password 설정  
-      **argon2: {해시값}**
+    % ipython
+        >>> from jupyter_server.auth import passwd
+        >>> passwd()
+            Enter password:
+            Verify password:
+            'argone2:...'
 
     # systemd service 설정 
     % sudo vim /etc/systemd/system/jupyter.service  // jupyter.service 설정파일 만들기
@@ -218,10 +221,9 @@ sudo apt install vim python3 python3-pip python3-dev -y
         [Install]
         WantedBy=multi-user.target
 
-
-    % systemctl daemon-reload
-    % systemctl start jupyter
-    % systemctl enable jupyter
+    % sudo systemctl daemon-reload
+    % sudo systemctl start jupyter
+    % sudo systemctl enable jupyter
 
 #### SDKMAN _ java
 
