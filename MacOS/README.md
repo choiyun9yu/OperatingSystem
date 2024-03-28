@@ -42,6 +42,9 @@
 	1) 비주얼스튜디오에서  보기 > 명령팔레트 > path검색 > code 명령 설치 선택
 	2) term창이나 터미널창에서 code 파일명.확장자
 
+ 	# 터미널 속도가 느려졌을 때
+  	% sudo rm /private/var/log/asl/*.asl
+
 #### python3를 기본으로 설정하기
 
 	% vi ~/.zshrc
