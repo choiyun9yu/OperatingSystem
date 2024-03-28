@@ -22,13 +22,21 @@
 	3. 테마 소스파일 다운로드  https://iterm2colorschemes.com/     // MaterialDark
 	4. 저장 소스파일 확장자 지우기 
 	5. term2의 환경설정 → profile - colors - color presets... → Import하고 다운받은 파일을 선택
-	
+
+	# 일반 터미널에서 폰트가 깨질 경우 
+ 	% git clone https://github.com/powerline/fonts.git --depth=1﻿
+  	% cd fonts
+	% ./install.sh
+ 
 	# 폰트수정
 	Term2를 켠 뒤 상태바 좌상단의 iTerm2 > Preference > Profiles > Text > Font
 
+	# [D2coding](https://github.com/naver/d2codingfont) 폰트 설정 
+ 	.zip 파일 다운로드 > 앱 서체관리자 > + 추가하기
+
 	# 터미널에서 폴더구조 tree로 보기
 	% brew install tree
-    % tree 
+   	% tree 
 
 	# 터미널에서 code 실행
 	1) 비주얼스튜디오에서  보기 > 명령팔레트 > path검색 > code 명령 설치 선택
