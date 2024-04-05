@@ -92,6 +92,8 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 ### 4-3. GUI manual ip setting
 ![image](https://github.com/choiyun9yu/OperatingSystem/assets/110392046/5b4f9a3a-6ace-4195-b82a-7208aeb9aec6)
 
+### 4-4. 해당 Port 가 열려있는지 확인 
+[open-ports](https://www.yougetsignal.com/tools/open-ports/)
     
 ## 5. SSH
 
