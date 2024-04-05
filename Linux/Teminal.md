@@ -116,19 +116,18 @@
 ## 2. Command
 
 ### 2-1. session
-   // 세선 목록 조회
-   % zellij list-sessions
+    // 세선 목록 조회
+    % zellij list-sessions
 
-   // 세선 접속
-   % zellij attach {세션 번호 or 세션 이름}
+    // 세선 접속
+    % zellij attach {세션 번호 or 세션 이름}
 
-  // 세션 나가기
-  Ctrl + q
+   // 세션 나가기
+   Ctrl + q
   
-
-   // 세선 종료
-   % zellij kii-sessions {세션 번호 or 세션 이름}
-
+    // 세선 종료
+    % zellij kii-sessions {세션 번호 or 세션 이름}
+    % zellij ka   // 모든 세션 강제 종료 
 
 ### 2-2. tab
 - [Ctrl + t]: tab 창 선택
