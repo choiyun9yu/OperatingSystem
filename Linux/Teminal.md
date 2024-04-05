@@ -1,4 +1,4 @@
-# Vim (Terminal Editor)
+  # Vim (Terminal Editor)
 - 명령 모드 : 처음 vi 명령어로 vi 편집기로 들어간 경우 (i or a를 누르면 입력모드 전환)
 - 입력 모드 : 자유롭게 코드나 글을 작성할 수 있는 코드 (ESC를 누르면 명령모드로 전환)
 - 마지막 행 모드 : 명령모드에서 콜론(:)을 입력하고 어떻게 종료할지 결정
@@ -115,18 +115,32 @@
 
 ## 2. Command
 
-###
-  // 세선 목록 조회
-  % zellij list-sessions
+### 2-1. session
+   // 세선 목록 조회
+   % zellij list-sessions
 
-  // 세선 접속
-  % zellij attach {세션 번호 or 세션 이름}
+   // 세선 접속
+   % zellij attach {세션 번호 or 세션 이름}
 
-  // 세선 종료
-  % zellij kii-sessions {세션 번호 or 세션 이름}
+  // 세션 나가기
+  Ctrl + q
+  
+
+   // 세선 종료
+   % zellij kii-sessions {세션 번호 or 세션 이름}
 
 
-### 2-2 
+### 2-2. tab
+- [Ctrl + t]: tab 창 선택
+- [Ctrl + t + 번호 or 방향키]: 탭 이동
+- [Ctrl + t + n]: 새로운 탭 생성 
 
 
+### 2-3. pane
+- [Ctrl + p]: pane 창 선택
+
+
+### 2-4. 
+- [Alt + 방향키]: pane 간의 이동
+- [Alt + = or -]: pane 사이즈 조절
 
