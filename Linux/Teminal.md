@@ -125,9 +125,11 @@
    // 세션 나가기
    Ctrl + q
   
-    // 세선 종료
-    % zellij kii-sessions {세션 번호 or 세션 이름}
+    // 활성중인 세선 종료
+    % zellij kill-session   {세션 번호 or 세션 이름}
     % zellij ka   // 모든 세션 강제 종료 
+
+    
 
 ### 2-2. tab
 - [Ctrl + t]: tab 창 선택
@@ -139,7 +141,12 @@
 - [Ctrl + p]: pane 창 선택
 
 
-### 2-4. 
+### 2-4. strider
+    % zellij --layout strider
+    // Alt + [ + 방향키
+
+
+### 2-5. 
 - [Alt + 방향키]: pane 간의 이동
 - [Alt + = or -]: pane 사이즈 조절
 
