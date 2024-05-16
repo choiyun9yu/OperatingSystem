@@ -94,6 +94,9 @@ Ubuntu 18 LTS 부터는 netplan을 사용해서 .yaml 파일로 설정
 
 ### 4-4. 해당 Port 가 열려있는지 확인 
 [open-ports](https://www.yougetsignal.com/tools/open-ports/)
+
+    #UDP
+    % sudo nmap -sU -p 1234 {대상 IP} 
     
 ## 5. SSH
 
