@@ -6,6 +6,7 @@
 
 ## How to install?
 - [install](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
+- [guide](https://www.youtube.com/watch?v=P9vTsM8xejY)
 
 ## How to use?
 - [usage](https://www.youtube.com/watch?v=yVnX6ozG_eY&t=0s)
