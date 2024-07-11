@@ -3,7 +3,7 @@
 ## 1. 윈도우 비밀번호 분실한 경우
 
     (1) left shift 누르고 다시시작 
-    (2) [계속] - [고급옵션] - [명령 프롬프트]
+    (2) [문제해결] - [고급옵션] - [명령 프롬프트]
     (3) copy c:\Windows\System32\Utilman.exe c:\Windows\System32\Utilman.bak
         >> 1개 파일이 복사되었습니다.
         copy c:\Windows\System32\cmd.exe c:\Windows\System32\Utilman.bak
