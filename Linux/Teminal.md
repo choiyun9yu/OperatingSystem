@@ -122,8 +122,8 @@
     // 세선 접속
     % zellij attach {세션 번호 or 세션 이름}
 
-   // 세션 나가기
-   Ctrl + q
+    // 세션 나가기
+    Ctrl + q
   
     // 활성중인 세선 종료
     % zellij kill-session   {세션 번호 or 세션 이름}
