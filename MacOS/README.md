@@ -143,3 +143,14 @@
 
 [Mongo Compass](https://www.mongodb.com/products/tools/compass)
     
+#### Network
+    // 모든 활성 포트 조회
+    %  netstat -an | grep LISTEN
+
+    // 특정 포트 확인
+    % lsof -i :{port_number}
+
+    // 모든 TCP 포트 조회
+    % netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
+    // 모든 UDP 포트 조회
+    % netstat -anvp udp
