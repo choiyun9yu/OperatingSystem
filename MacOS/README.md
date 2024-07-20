@@ -154,3 +154,7 @@
     % netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
     // 모든 UDP 포트 조회
     % netstat -anvp udp
+
+
+#### AirPlay (맥에서 5000번 포트 사용)
+    시스템 환경설정 - 공유 - AirPlay 수신모드 체크 해제
