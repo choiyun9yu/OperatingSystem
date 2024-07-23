@@ -145,10 +145,10 @@
     
 #### Network
     // 모든 활성 포트 조회
-    %  netstat -an | grep LISTEN
+    % netstat -an | grep LISTEN
 
     // 특정 포트 확인
-    % lsof -i :{port_number}
+    % sudo netstat -lnup | grep :[포트번호]
 
     // 모든 TCP 포트 조회
     % netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
