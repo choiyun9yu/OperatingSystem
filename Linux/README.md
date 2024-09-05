@@ -159,8 +159,8 @@ sudo apt install vim python3 python3-pip python3-dev -y
         c.ServerApp.allow_origin = '*'     // 외부접속 허용
         c.ServerApp.notebook_dir = '/home/yun9yu/Workspace/jupyterlab'    // 디렉터리 루트 경로
         c.ServerApp.open_brower = False    // 실행 시 브라우저 오픈 여부
-        c.ServerApp.ip = '192.168.219.110' // 내부 ip
-        c.ServerApp.port = 8080            // 포트 번호 
+        c.ServerApp.ip = '192.168.219.169' // 내부 ip
+        c.ServerApp.port = 8989            // 포트 번호 
         c.ServerApp.password = 'argone2:....su'    // 비밀번호 (나중에 자동으로 써지는 듯)
 
     % ipython
