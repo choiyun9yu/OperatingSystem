@@ -1,6 +1,7 @@
 # Raspberry Pi
 
 ## 1. Raspberry Pi OS 설치
+### 1-1. Install
 - [download link](https://www.raspberrypi.com/software/)
 - Raspberry Pi OS (other) -> Raspberry Pi OS Lite(32-bit)
   (Lite 는 CTL, Full 은 GUI)
@@ -21,6 +22,12 @@
 - 시간대는 Asia/Seoul, 키보드 레이아웃은 us 를 사용하면 된다.
 #### 쓰기
 - 설정일 마친 뒤 쓰기 버튼을 눌러 이미지 파일을 저장 장치에 구워주면 된다. (10분 정도 소요)
+
+### 1-2. Setting
+    % vim /etc/lightdm/lightdm.conf
+    // #xserver-command=X => xserver-command=X -s O -dpms
+    % sudo /etc/init.d/lightdm restart
+
 
 <br>
 
