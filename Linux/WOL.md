@@ -59,7 +59,13 @@
     // 적용
     % sudo systemctl enable /etc/systemd/system/wol.service
 
-### 4-3. 공유기 설정(LG)
+### 4-3. Windows 에서 WOL 설정 
+- [장치 관리자] -> [네트워크 어댑터] -> Realteck or Intel -> [고급] - Wake on Magic Packet - Enable
+- [장치 관리자] -> [네트워크 어댑터] -> Realteck or Intel -> [전원 관리 - 매직 패켓에서만 컴퓨터의 대기 모드를 종료할 수 있은 check
+- [제어판] - 모든 제어판 항목 - [전원 옵션] - [시스템 설정] - 현재 사용할 수 없는 설정 변경 - [빠른 시작 켜기] 해제
+
+
+### 4-4. 공유기 설정(LG)
 - [192.168.219.1] - [네트워크 설정] - [원격제어 설정] -> 사용함
 - [Wake On LAN] - [맥주소 검색] - [추가]
 
